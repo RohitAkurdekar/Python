@@ -45,7 +45,7 @@ class Student:
         self.__student_enrolled_coursename = None
 
 # public function which update private parameter of a class 
-    @classmethod
+    @classmethod    #-> decorator
     def change_schoolname(cls,rcv_schoolname):
         cls.school_name = rcv_schoolname
 
