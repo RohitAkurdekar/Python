@@ -54,9 +54,9 @@ class Student:
 # -------------- main func ----------------------------
 def main():
 # Creating an object of class also called as constructor
-    gaurav= Student("Gaurav",1,100,'Python')
+    gaurav = Student("Gaurav",1,100,'Python')
                     #^ Paramateres to be updated for a particular object
-    pratik= Student("Pratik",2,100,'Python')
+    pratik = Student("Pratik",2,100,'Python')
 # Accessing public parameters directly
     print(gaurav.student_name)
 

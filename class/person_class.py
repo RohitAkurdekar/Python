@@ -40,9 +40,11 @@ class Person:
 
     #display all details
     def displayDet(self)->None:
+        print("------------------------------------------------")
         print("Name: ",self.Name)
         print("Sex: ",self.Sex)
         print("Profession: ",self.Profession)
         print("Study():",self.getStudyBehaviour())
         print("Work():",self.getWorkBehaviour())
+        print("------------------------------------------------")
     

@@ -6,7 +6,7 @@ def main():
     Rohit.setStudyBehaviour()
     Rohit.setWorkBehaviour("Never studies")     # multiple ways to pass data
 
-    print(Rohit.displayDet())       # calling func to display details
+    Rohit.displayDet()       # calling func to display details
 
 
 # Saurav is an Object of a class person
@@ -15,6 +15,6 @@ def main():
          # multiple ways to pass data
     Saurav.setWorkBehaviour(input("Enter work behaviour: ")) 
 
-    print(Saurav.displayDet())       # calling func to display details
+    Saurav.displayDet()       # calling func to display details
 
 main()
