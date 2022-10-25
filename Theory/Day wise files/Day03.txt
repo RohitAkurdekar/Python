@@ -1,0 +1,281 @@
+Sequence Types Datatypes 
+--------------------------
+String , List , Tuples , range
+https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
+
+Mapping type Datatypes 
+-----------------------------
+Dictionary 
+
+Set type Datatypes 
+-------------------------------
+Sets, frozensets
+
+
+---------------------------------
+Demon on sequence types 
+---------------------------------
+
+
+"""
+my_sequence_variable  = "gaurav";
+
+# indexing / accessing
+
+print("My zeroth element is " , my_sequence_variable[0])
+print("My third element is " , my_sequence_variable[2])
+
+# slicing 
+# start = 0 
+# stop : len [exclusive]
+# step : 1 
+
+print("Using  : ",my_sequence_variable[:]) # "gaurav"
+print("Using 2: ",my_sequence_variable[2:]) # "urav"
+print("Using :3 ",my_sequence_variable[:3]) # "gau"
+print("Using :3:1 ",my_sequence_variable[:3:1])  # "gau"
+print("Using :3:2 : ",my_sequence_variable[:3:2]) # "gu"
+print("Using 2:3:1 : ",my_sequence_variable[2:3:1]) # "u"
+print("Using :6:3 : ",my_sequence_variable[:6:3]) # "gr"
+
+# slice object 
+
+slice() can take three parameters:
+
+start (optional) - Starting integer where the slicing of the object starts. Default to None if not provided.
+stop - Integer until which the slicing takes place. The slicing stops at index stop -1 (last element).
+step (optional) - Integer value which determines the increment between each index for slicing. Defaults to None if not provided.
+
+print("Using  slice object  slice(2,3,1) : ",my_sequence_variable[slice(2,3,1)]) # "u"
+print("Using  slice object  slice(3) : ",my_sequence_variable[slice(3)]) # ""gau""
+
+
+my_sequence_variable  = ['g','a','u','r','a','v'];
+
+# indexing / accessing
+
+print("My zeroth element is " , my_sequence_variable[0])
+print("My third element is " , my_sequence_variable[2])
+
+# slicing 
+# start = 0 
+# stop : len [exclusive]
+# step : 1 
+
+print("Using  : ",my_sequence_variable[:]) # "gaurav"
+print("Using 2: ",my_sequence_variable[2:]) # "urav"
+print("Using :3 ",my_sequence_variable[:3]) # "gau"
+print("Using :3:1 ",my_sequence_variable[:3:1])  # "gau"
+print("Using :3:2 : ",my_sequence_variable[:3:2]) # "gu"
+print("Using 2:3:1 : ",my_sequence_variable[2:3:1]) # "u"
+print("Using :6:3 : ",my_sequence_variable[:6:3]) # "gr"
+
+# slice object 
+
+slice() can take three parameters:
+
+start (optional) - Starting integer where the slicing of the object starts. Default to None if not provided.
+stop - Integer until which the slicing takes place. The slicing stops at index stop -1 (last element).
+step (optional) - Integer value which determines the increment between each index for slicing. Defaults to None if not provided.
+
+print("Using  slice object  slice(2,3,1) : ",my_sequence_variable[slice(2,3,1)]) # "u"
+print("Using  slice object  slice(3) : ",my_sequence_variable[slice(3)]) # ""gau""
+
+"""
+# create a sequence of numbers from 0 to 3
+numbers = range(4)
+
+# iterating through the sequence of numbers
+for i in numbers:
+    print(i)
+
+
+---------------------------
+Functions
+--------------------------
+
+# function definition with no parameters
+def display():
+    print("Hello")
+
+# invoke a function 
+display()
+
+#-----------------------------------------
+# function definition with single parameter
+def display_firstname(name):
+    print("Hello ",name)
+
+# invoke a function 
+display_firstname("Pratik")
+
+#-----------------------------------------
+# function definition with multiple parameter
+def display_first_lastname(name,surname):
+    print("Hello ",name,surname )
+
+# invoke a function using positional argument 
+display_first_lastname("Pratik","Deshmukh")
+
+# -------------------------------
+# invoke a function using keywords argument 
+display_first_lastname(name= "Pratik",surname= "Deshmukh")
+
+# invoke a function using positional argument and Keyword argument  
+display_first_lastname("Pratik",surname = "Deshmukh")
+
+# -------------------------------
+# invoke a function using keywords argument and positional argument 
+#display_first_lastname(name= "Pratik","Deshmukh")
+
+#-----------------------------------------
+# function definition with multiple parameter and a default value 
+def display_first_lastname_with_default(name = "World",surname = "Universe"):
+    print("Hello ",name,surname )
+
+# invoke a function using keywords argument and positional argument 
+#display_first_lastname()
+display_first_lastname_with_default()
+
+# ---------------------------------------------
+# what does a function return when there is no return keyword
+#----------------------------------------------
+print("The value returned was ",display_first_lastname_with_default());
+
+
+#-----------------------------------------
+# function definition with multiple parameter and a return keyword 
+def display_first_lastname_with_return(name ,surname ):
+    print("Hello ",name,surname )
+    return name+' '+surname
+
+# ---------------------------------------------
+# what does a function return when there is a return keyword
+#----------------------------------------------
+print("The value returned was ",display_first_lastname_with_return("Pratiksha","Chopra"));
+
+#-----------------------------------------
+# function definition with multiple parameter where there are type annotations 
+def display_first_lastname_with_type_annotation(name:str ,surname:str ) -> str :
+    print("Hello ",name,surname )
+    return name+' '+surname
+
+# ---------------------------------------------
+# what does a function return when there is type annotation 
+#----------------------------------------------
+print("The value returned was ",display_first_lastname_with_type_annotation("Virender","Sehwag"))
+
+
+#-----------------------------------------
+# function definition with multiple parameter where the last statement is some calculation
+def display_first_lastname_with_some_calc(name ,surname)  :
+    print("Hello ",name,surname )
+    name+' '+surname
+
+print("The value returned was ",display_first_lastname_with_some_calc("Sachin","Tendulkar"));
+
+# --------------------------------------------------------------------------
+
+#-----------------------------------------
+# lambda
+my_lambda_func = lambda name ,surname  : name+' '+surname
+
+print("The value returned was ",my_lambda_func("Gaurav","Rajput"));
+
+#--------------------------
+
+# function name that I dont like 
+def display_i_dont_like_this_name(name ,surname)  :
+    print("Hello ",name,surname )
+    return name+' '+surname
+
+my_favourite_function_name = display_i_dont_like_this_name
+print("The value returned was ",my_favourite_function_name("Kevin","Pieterson"))
+
+#-------------------------------
+
+Assignment on collections and functions :
+------------------------------
+
+1) Lets create a student list named "members" with following names in it
+
+Pratiksha,Kevin,Sachin,Yuvraj,Sania
+
+Do the following operations on the created list 
+ (i) Display number of elements in the members list
+ (ii) Add "Ross" to the members collection 
+ (iii) Add "David","Bret","Sanju"  to the members collection 
+ (iv) Remove the third member from the collection 
+ (v) Remove the last member from the collection 
+ ( vi)  Display third, fourth and fifth element from the collection 
+ 
+2) Lets create a dictionary named "Capitals" of country and their capitals 
+
+India : New Delhi
+USA : Washington DC
+Nepal: Kathmandu
+Ukraine : Kyiv
+
+Do the following operations on the created dictionary
+ (i) Display number of elements in the Capitals collection
+ (ii) Add Afghanistan: Kabul  to the Capitals collection 
+ (iii) Add "Albania	Tirana
+			Algeria	Algiers
+			Andorra	Andorra la Vella
+			to the Capitals collection 
+ (iv) Remove the USA from the collection 
+
+
+
+3) Take a number from the user and print fibonacci sequence till that number USING Range Iterator 
+	eg : fibonnaci sequence for 5 is 1,2,3,5 """
+
+4) Create two sets as follows 
+
+A = 1,2,3,4,5
+B = 18,19,20,21
+
+Perform following operations on these :
+a) Union
+b) Intersection 
+c) A-B
+d) B-A
+
+Display if 20 is a member of set B 
+
+Do the following operations on the created set A	 
+ (i) Display number of elements in the set A
+ (ii) Add 365 to the set
+ (iii) Add 12,13,14  to set B
+ (iv) Remove 12 from set B
+
+
+5) create a function named factorial() that takes in a number and displays the factorial of that number 
+6) create a function that  take a number from the user and returns a list of  even numbers from 1 to that number      
+7) create a function that takes in a number from the user and returns a tuple of all Odd numbers from 1 to that number 
+8) create a lambda function take a number from the user and print all prime numbers from 1 to that number 
+9) create a function that takes in temperature in Celsius and returns temperature in Farenhiet
+10) create a function that takes in date of birth from the user and returns age in days of the user 
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+

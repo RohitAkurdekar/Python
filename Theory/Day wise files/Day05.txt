@@ -1,0 +1,304 @@
+DIOT Store
+------------------------------------------------
+Program to use the features we have learnt so far
+-------------------------------------------------
+Welcome User , What would you like to do today?
+
+1) Operations on List
+     a) Please enter First list 
+	    Note : raise an exception if the users inserts a negative number in case he chooses to input
+		a list of numbers OR he inputs empty list 
+	 1) Please enter operation would you like to perform
+		   1a) Add Two lists in order of their insert 
+		           Take the second list from the user for this operation
+		   2a) Check if the element is present in the list 
+		            Take the Input element that you would like to search
+					Note : raise an exception if the element is not found in the list
+           3a) Append to the list 
+                   Take the Slice or individual element to add to the first list		   
+			
+2) Operations on Dictionary
+     a) Please enter First Dictionary 
+	 1) Please enter operation would you like to perform
+		   1a) Merge Two lists 
+		           Take the second Dictionary from the user for this operation
+		   2a) Check if the element is present in the list 
+		            Take the Input element that you would like to search
+           3a) Append to the dictionary 
+                   Take the Slice or individual element to add to the first dictionary		   
+3) Operations on Set
+     a) Please enter First set 
+	 1) Please enter operation would you like to perform
+		   1a) Check if the element is present in the list 
+		            Take the Input element that you would like to search
+           3a) Add to the set 
+                   Add aN Individual element to add to the first set
+4) Operations on strings 
+      Please enter the string
+	  1) Display upper case of the string
+	  2) Concatenate "Hello" literal to the existing string received
+	  3) Output true if the string has letter 'a' in it 
+
+5) Exit
+
+--------------------
+
+lang = input("What's the programming language you want to learn? ")
+
+match lang:
+    case "JavaScript":
+        print("You can become a web developer.")
+
+    case "Python":
+        print("You can become a Data Scientist")
+
+    case "PHP":
+        print("You can become a backend developer")
+    
+    case "Solidity":
+        print("You can become a Blockchain developer")
+
+    case "Java":
+        print("You can become a mobile app developer")
+    case _:
+        print("The language doesn't matter, what matters is solving problems.")
+
+#-----------
+
+lang = input("What's the programming language you want to learn? ")
+
+if lang == "JavaScript" :
+        print("You can become a web developer.")
+
+elif lang == "Python" :
+        print("You can become a Data Scientist")
+
+elif lang == "PHP" :
+        print("You can become a backend developer")
+
+elif lang == "Solidity" :    
+        print("You can become a Blockchain developer")
+
+elif lang == "Java" :    
+        print("You can become a mobile app developer")
+else: 
+        print("The language doesn't matter, what matters is solving problems.")
+--------------------
+
+Initial framework for the solution 
+--------------------
+
+  
+#---------------------------
+
+"""Note : raise an exception if the users inserts a negative number in case he chooses to input
+    a list of numbers OR he inputs empty list """
+def add_two_lists(input_list1):
+        #Take the second list from the user for this operation
+        input_list2 = list(input("Please enter the values for the second list"))
+
+        is_number_list = input("Are the number lists: Type Y/N").upper
+
+        list1_len = len(input_list1)
+        list2_len = len(input_list2)
+
+        new_list=[]
+        for i in range(0,max(list1_len,list2_len)):
+            if is_number_list=='Y':
+                new_list.append( int(input_list1[i])+int(input_list1[i]))
+            else:
+                new_list.append( input_list1[i]+input_list1[i])
+
+        print(new_list)
+
+def element_exists(input_list,element_to_search):
+    try:
+        print("Number found on index " ,  input_list.index(element_to_search))
+    except ValueError:
+        raise ValueError("Number not present in the list ")
+        #Note : raise an exception if the element is not found in the list
+
+def func_choice1():
+    input_list1 = list(input("Please enter the values for the first list"))
+    print("1 Add Two lists in order of their insert")
+    print("2 Check if the element is present in the list")
+    print("3 Append to the list ")
+    sub_operation = int(input("Please enter operation would you like to perform"))
+    
+    if sub_operation ==1:
+          add_two_lists(input_list1)              
+    elif sub_operation ==2:
+        element_to_search = input("Please Input element that you would like to search")
+        element_exists(input_list1,element_to_search)
+    elif sub_operation ==3:
+        #Take the Slice or individual element to add to the first list	
+        to_append_element = input("individual element to add to the first list")
+        input_list1.append(to_append_element)
+        print("Element Added :" , input_list1 )
+    return True
+
+def func_choice2():
+    pass 
+
+def func_choice3():
+    pass 
+
+def func_choice4():
+    pass 
+
+while(True):
+    print("DIOT STORE")
+    print("Welcome User , What would you like to do today?")
+    print("1) Operations on List")
+    print("2) Operations on Dictionary")
+    print("3) Operations on Set")
+    print("4) Operations on strings ")
+    print("5) Exit")
+    choice = int(input("Please enter you choice"))
+    
+    if choice ==1:
+        func_choice1() 
+    elif choice ==2:
+        func_choice2() 
+    elif choice ==3:
+        func_choice3()  
+    elif choice ==4:
+        func_choice4()  
+    elif choice ==5:
+        print("Thank you for using DIOT store today!!! Visit again")
+        break
+    else:
+        print("Please enter correct choice")
+  
+
+"""
+     a) Please enter First Dictionary 
+	 1) Please enter operation would you like to perform
+		   1a) Merge Two lists 
+		           Take the second Dictionary from the user for this operation
+		   2a) Check if the element is present in the list 
+		            Take the Input element that you would like to search
+           3a) Append to the dictionary 
+                   Take the Slice or individual element to add to the first dictionary		   
+
+     a) Please enter First set 
+	 1) Please enter operation would you like to perform
+		   1a) Check if the element is present in the list 
+		            Take the Input element that you would like to search
+           3a) Add to the set 
+                   Add aN Individual element to add to the first set
+
+      Please enter the string
+	  1) Display upper case of the string
+	  2) Concatenate "Hello" literal to the existing string received
+	  3) Output true if the string has letter 'a' in it 
+
+"""
+
+
+----------------
+CLASSES
+-----------------
+
+class Student:
+    
+    school_name = "CDAC"    
+    def __init__(self,rcv_name,rcv_rollno,rcv_pocket_money,rcv_course) -> None:
+        self.student_name = rcv_name
+        self.student_rollno = rcv_rollno
+        self._student_pocket_money = rcv_pocket_money
+        self.__student_enrolled_coursename = rcv_course
+
+    def get_enrolled_course(self):
+        return self.__student_enrolled_coursename
+
+
+    def get_student_pocket_money(self):
+        return self._student_pocket_money
+
+    def enroll(self,rcv_course_name):
+        self.__student_enrolled_coursename = rcv_course_name
+
+    def unenroll(self):
+        self.__student_enrolled_coursename = None
+
+    @classmethod
+    def change_schoolname(cls,rcv_schoolname):
+        cls.school_name = rcv_schoolname
+def main():
+    print("I am in main")
+
+    gaurav= Student("Gaurav",1,100,'Python')
+    print(gaurav.student_name)
+    print(gaurav.get_student_pocket_money())
+    print("Before Enroll call ", gaurav.get_enrolled_course())
+    gaurav.enroll("Scala")
+    print("After Enroll call ", gaurav.get_enrolled_course())
+
+"""
+    pratik= Student("Pratik",2,200,'Java')
+    print(gaurav.student_name)
+    print(gaurav.get_student_pocket_money())
+    print("Before Enroll call ", gaurav.student_enrolled_coursename)
+    gaurav.enroll("C")
+    print("After Enroll call ", gaurav.student_enrolled_coursename)
+
+    print("School name is",gaurav.school_name)
+    Student.change_schoolname("Sunbeam")
+    print("Gaurav School name is",gaurav.school_name)
+    print("Pratik School name is",pratik.school_name)
+"""
+main()
+
+
+-- try creating this 
+Employee
+  
+  public emp_id
+  private emp_salary
+  protected mgr_id
+  
+  
+  get_emp_salary()-> emp_salary
+  set_emp_salary(rcv_salary)-> emp_salary
+  
+  
+
+main
+
+
+employee(100,1000,1)  
+
+// direct access using .notation
+empid
+emp_salary
+mgr_id
+
+-- exercise 02
+create a class named "CDAC_course"   
+class variable 
+	instructors_so_far_for_the_course[] // list 
+instance variables 
+	subject_name (public)
+	subject_instructor_name (public)
+	subject_instructor_designation ( protected)
+	subject_instructor_company ( protected)
+	subject_instructor_feedback ( private)
+
+instance methods
+   get_subject_instructor_feedback()
+
+classmethod   
+   get_instructors_so_far_for_the_course()
+   // append to the existing list in this func
+   set_instructors_so_far_for_the_course(instructor_name) 
+
+create a function main that 
+a) creates an obj of course class with values
+   DIOT-Python,Elon Musk,CEO at Tesla ,Cdac,"Sample Feedback"
+b) Add Elon musk to the class list variable instructors_so_far_for_the_course
+c) print Elon Musk feedback
+d) Print all the  instructors_so_far_for_the_course   
+  
+  
+  

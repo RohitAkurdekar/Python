@@ -1,0 +1,40 @@
+-- git hub share link 
+https://github.com/gauravrajput89/Programming-Technologies-PG-DIOT-Sept-2022
+
+-- Ide to use 
+https://code.visualstudio.com/download
+
+-- install Python , Pylance, Jupyter extensions in Visual studio code Ide
+
+-- conda installation 
+https://conda.io/projects/conda/en/latest/user-guide/install/windows.html
+https://conda.io/projects/conda/en/latest/user-guide/install/linux.html
+
+-- reference syntax site 
+https://www.programiz.com/python-programming/operators
+
+
+-------------------
+Questions based on variable, statements , input and print functions and operators 
+------------------
+
+1) Accept two numbers from the user and print 
+a) addition 
+b) first number squared 2 
+c) first number raised to number second number
+
+2) Accept String from user and output upper case of the input string 
+
+3) Define a variable named "raise_salary_percentage" and get the salary raise 
+percentage from the user, Now apply the raise to an employee
+with harcoded data Name= 'gaurav' existing_salary = 900 INR and 
+print the incremented salary to the console
+
+4) Get the height from the user in cms and display the user height back to console
+in foot/feet and inches
+
+5) Get the no of the dollars from the user apply the conversion of 
+1 dollar = 82 rupees and print the amount to the console in rupees
+
+6) Take the source, destination, fare in INR, discount_rate percentage from the user and display the 
+string ex: "fare from mumbai to pune is 300 INR with has a discount of 5%"

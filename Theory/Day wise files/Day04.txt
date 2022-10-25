@@ -1,0 +1,160 @@
+------------
+Exception Handling
+----------------
+"""
+def my_sum(a,b):
+     c= a+b
+     return c 
+
+print(my_sum(1,2))
+print(my_sum(1,"a"))
+
+def my_sum_with_generic_exception_handler(a,b):
+     try:
+        c= a+b
+        return c 
+     except Exception:
+        print("Some Error occured")   
+
+print(my_sum_with_generic_exception_handler(1,2))
+print(my_sum_with_generic_exception_handler(1,"a"))
+
+
+
+def my_sum_with_exception_specific_nonrelevant_handler(a,b):
+     try:
+        c= a+b
+        return c 
+     except NameError:
+        print("Some Error occured")   
+
+print(my_sum_with_exception_specific_nonrelevant_handler(1,2))
+print(my_sum_with_exception_specific_nonrelevant_handler(1,"a"))
+
+
+def my_sum_with_exception_specific_relevant_handler(a,b):
+     try:
+        c= a+b
+        return c 
+     except TypeError:
+        print("Some Error occured")   
+
+print(my_sum_with_exception_specific_relevant_handler(1,2))
+print(my_sum_with_exception_specific_relevant_handler(1,"a"))
+
+
+
+
+def my_sum_with_exception_specific_multiple_handler(a,b):
+     try:
+        c= a+b
+        return c 
+     except (ZeroDivisionError,NameError):
+        print("Some Error occured")   
+
+print(my_sum_with_exception_specific_multiple_handler(1,2))
+print(my_sum_with_exception_specific_multiple_handler(1,"a"))
+
+
+
+def my_sum_with_exception_specific_multiple_handler(a,b):
+     try:
+        c= a+b
+        return c 
+     except (ZeroDivisionError,NameError,TypeError):
+        print("Some Error occured")   
+
+print(my_sum_with_exception_specific_multiple_handler(1,2))
+print(my_sum_with_exception_specific_multiple_handler(1,"a"))
+
+
+
+def my_sum_with_exception_I_raised_system_exception(a,b):
+     try:
+        if isinstance(b,str):
+            raise ImportError("I played mischief it wasn't an Import Error ")
+        c= a+b
+        return c 
+     except (ZeroDivisionError,NameError,TypeError):
+        print("Some Error occured")   
+
+print(my_sum_with_exception_I_raised_system_exception(1,2))
+print(my_sum_with_exception_I_raised_system_exception(1,"a"))
+
+
+
+class My_custom_exception(Exception):
+    pass
+
+def my_sum_with_exception_I_raised_my_exception(a,b):
+     try:
+        if isinstance(b,str):
+            raise My_custom_exception
+        c= a+b
+        return c 
+     except (ZeroDivisionError,NameError,TypeError):
+        print("Some Error occured")   
+
+print(my_sum_with_exception_I_raised_my_exception(1,2))
+print(my_sum_with_exception_I_raised_my_exception(1,"a"))
+
+"""
+------------
+Modules : Please refer to my_artimatic_operation.py and my_calculator.py file for the demo
+------------
+
+------------
+File handling
+-------------
+
+"""
+# Python program to demonstrate  opening a file
+file1 = open('my_first_file.txt',"r")
+print(file1.read())
+file1.close()
+"""
+
+# no need to close if we use with context
+with( open('my_first_file.txt',"r") as file1):
+    print(file1.read())
+
+"""
+# Write to a file in w mode 
+with ( open('my_first_file.txt',"w") as file1):
+    file1.write("I just wrote to the file")
+
+
+# Write to a file in w mode 
+with ( open('my_first_file.txt',"a") as file1):
+    file1.write("I just wrote to the file")
+
+#------------
+with( open('my_first_file.txt',"r") as file1):
+    print(file1.readline())
+
+
+with( open('my_first_file.txt',"r") as file1):
+    print(file1.readlines())
+"""
+# strip off those \n at the end of the list 
+with ( open('my_first_file.txt',"r") )as file1:
+    lines = []
+    for line in file1:
+        lines.append(line.strip())
+
+print(lines)
+
+
+---
+regular expressions
+---
+import re
+
+pattern = '[a-zA-Z0-9]'
+test_string = '9091029'
+result = re.match(pattern, test_string)
+
+if result:
+  print("Search successful.")
+else:
+  print("Search unsuccessful.")	

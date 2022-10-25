@@ -1,0 +1,228 @@
+-------------------------------
+Exercises for practice -- Set 01
+--------------------------------
+
+1) Create a student list named "members" with following names in it
+
+Pratiksha,Kevin,Sachin,Yuvraj,Sania
+
+Do the following operations on the created list 
+ (i) Display number of elements in the members list
+ (ii) Add "Ross" to the members collection 
+ (iii) Add "David","Bret","Sanju"  to the members collection 
+ (iv) Remove the third member from the collection 
+ (v) Remove the last member from the collection 
+ ( vi)  Display third, fourth and fifth element from the collection 
+ 
+2) Lets create a dictionary named "Capitals" of country and their capitals 
+
+India : New Delhi
+USA : Washington DC
+Nepal: Kathmandu
+Ukraine : Kyiv
+
+Do the following operations on the created dictionary
+ (i) Display number of elements in the Capitals collection
+ (ii) Add Afghanistan: Kabul  to the Capitals collection 
+ (iii) Add "Albania	Tirana
+			Algeria	Algiers
+			Andorra	Andorra la Vella
+			to the Capitals collection 
+ (iv) Remove the USA from the collection 
+
+
+
+3) Take a number from the user and print fibonacci sequence till that number USING Range Iterator 
+	eg : fibonnaci sequence for 5 is 1,2,3,5 """
+
+4) Create two sets as follows 
+
+A = 1,2,3,4,5
+B = 18,19,20,21
+
+Perform following operations on these :
+a) Union
+b) Intersection 
+c) A-B
+d) B-A
+
+Display if 20 is a member of set B 
+
+Do the following operations on the created set A	 
+ (i) Display number of elements in the set A
+ (ii) Add 365 to the set
+ (iii) Add 12,13,14  to set B
+ (iv) Remove 12 from set B
+
+
+5) create a function named factorial() that takes in a number and displays the factorial of that number 
+6) create a function that  take a number from the user and returns a list of  even numbers from 1 to that number      
+7) create a function that takes in a number from the user and returns a tuple of all Odd numbers from 1 to that number 
+8) create a lambda function take a number from the user and print all prime numbers from 1 to that number 
+9) create a function that takes in temperature in Celsius and returns temperature in Farenheit
+10) create a function that takes in date of birth from the user and returns age in days of the user 
+
+---------------------------------
+Exercises for Practice -- Set 02
+----------------------------------
+1. Write a Python program that accept a number of words and then those number of words and Print the number of distinct words and number of occurrences for each distinct word according to their appearance. 
+
+Ex: 
+Input Taken : 
+
+Input number of words: 7
+Input the words:
+Red
+Green
+Blue
+Black
+White
+Blue
+Green
+
+Output: 
+
+"Number of distinct words are 5"
+Red : 1 
+Green: 2
+Blue : 2 
+Black : 1 
+White : 1
+
+
+2: Write a Python program that accepts number of subjects
+and then a list of subject names and a list marks.
+
+Print subject name and marks in order of its first occurrence comma seperated.
+
+Sample Input: 
+Number of subjects: 3
+Input Subject name : Bengali 
+Input Subject name : English 
+Input Subject name : Math 
+
+Input Subject marks : 23
+Input Subject name : 24
+Input Subject name : 45
+
+
+Sample output : 
+
+Bengali--23 , English--24, Math--45
+
+3.Write a Python program to find the second lowest total marks of any student(s) from the given names and marks of each student using lists and lambda. I
+
+Input number of students, names and grades of each student. 
+
+Sample Input:
+Input number of students: 3
+Name: Avik Das
+Total marks: 89
+Name: ayan Roy
+Total marks: 75
+Name: Sayan Dutta
+Total marks: 93
+
+Sample Output:
+Names and Marks of all students:
+[['Avik Das ', 89.0], ['ayan Roy', 75.0], ['Sayan Dutta', 93.0]]
+
+Second lowest Marks: 89.0
+Names: Avik Das
+
+4. Write a Python program to find the item with maximum frequency in a given list. 
+
+Sample :
+Original list:
+[2, 3, 8, 4, 7, 9, 8, 2, 6, 5, 1, 6, 1, 2, 3, 2, 4, 6, 9, 1, 2]
+Item with maximum frequency of the said list:
+(2, 5)
+
+5.Write a Python program to count most and least common characters in a given string.
+
+Sample :
+Original string:
+hello world
+Most common character of the said string: l
+Least common character of the said string: h
+
+6.Write a Python program to get the frequency of the tuples in a given list. Go to the editor
+
+Sample :
+Original list of tuples:
+[(['1', '4'], ['4', '1'], ['3', '4'], ['2', '7'], ['6', '8'], ['5', '8'], ['6', '8'], ['5', '7'], ['2', '7'])]
+
+Output:
+
+Tuples 		frequency
+('1', '4') 		2
+('3', '4') 		1
+('2', '7') 		2
+('6', '8') 		2
+('5', '8') 		1
+('5', '7') 		1
+
+7. Write a Python program to count the occurrence of each element of a given list. Go to the editor
+
+Sample :
+Original List:
+['Green', 'Red', 'Blue', 'Red', 'Orange', 'Black', 'Black', 'White', 'Orange']
+Count the occurrence of each element of the said list:
+Counter({'Red': 2, 'Orange': 2, 'Black': 2, 'Green': 1, 'Blue': 1, 'White': 1})
+Original List:
+[3, 5, 0, 3, 9, 5, 8, 0, 3, 8, 5, 8, 3, 5, 8, 1, 0, 2]
+Count the occurrence of each element of the said list:
+Counter({3: 4, 5: 4, 8: 4, 0: 3, 9: 1, 1: 1, 2: 1})
+
+
+8.Write a program that calculates a user's BMI using the user's weight and height.
+BMI is calculated by dividing the person's weight in kg by the square of the person's height in meters. Round the result to a whole number.
+Sample : 
+height = 1.85
+weight = 75
+
+Output: 22
+
+9.Create a program that takes the user's current age as input and calculates how many days, weeks, and months they have left to live if they would get 99 years old.
+
+For this exercise, we assume that a year has 365 days, 52 weeks, and 12 months.
+We don't take leap years into account!
+
+Print the final result to the console using an f-String!
+
+Sample :
+Please enter your age today : 36
+Output :
+You have 22995 days, 3276 weeks, and 756 months left to live a joyful life !
+
+10. Print a greeting to the screen, welcoming our user to the Tip Calculator.
+Ask the user how much the total bill is and store the value in a variable.
+Ask the user how much percent tip they want to give the waiter and store the value in a variable.
+Ask the user how many people they want to split the bill between and store the value in a variable.
+Calculate how much each of your friends has to pay if the bill, including tip, is equally spread among them.
+Round the result to two positions after the comma and print it to the console
+
+Hint on solving:
+When you input the following amounts:
+Total bill: 150
+Tip percentage: 12
+Split between people: 5
+The total amount paid by each person should be $33.60, not $33.6
+
+If the bill is 150$ split between 5 people with a 12% tip, you can use this formula to calculate the final amount each person has to pay (feel free to use any other formula to get to the result!):  150/5 * 1.12
+
+Sample :
+If you enter the following values:
+
+Total bill: 180
+Tip percentage: 15
+Split between people: 4
+
+Output:
+Each person has to pay : $51.75
+
+
+Some websites for practice :
+https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/
+https://www.practicepython.org/
+ 

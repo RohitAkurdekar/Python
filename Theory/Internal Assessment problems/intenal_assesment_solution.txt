@@ -1,0 +1,76 @@
+class Creature:
+    #class varaible
+    Category="Mammal"
+    @classmethod
+    def get_category(cls):
+        return cls.Category
+    
+    @classmethod
+    def set_category(cls,rcv_category):
+        cls.Category=rcv_category
+        
+    def __init__(self,rcv_uniqueId,rcv_gender,rcv_current_activity):
+        self.uniqueId=rcv_uniqueId
+        self.gender=rcv_gender
+        self.current_activity=rcv_current_activity
+    
+    def eat(self):
+        self.current_activity="eat"
+        print("I am eating")
+        
+    def sleep(self):
+        self.current_activity="sleep"
+        print("I am sleeping")
+        
+        
+class Human(Creature):
+    
+    def __init__(self, rcv_uniqueId, rcv_gender, rcv_current_activity,rcv_name,rcv_age,rcv_city):
+        super().__init__(rcv_uniqueId, rcv_gender, rcv_current_activity)
+        self.name=rcv_name
+        self.age=rcv_age
+        self.city=rcv_city
+        
+    def play(self):
+        self.current_activity="play"
+        print("I am playing")
+        
+        
+    def work(self):
+        self.current_activity="work"
+        print("I am working")
+        
+    def display_details(self):
+        print("Unique ID:",self.uniqueId)
+        print("Gender:",self.gender)
+        print("Current_activity:",self.current_activity)
+        print("Name:",self.name)
+        print("Age:",self.age)
+        print("City:",self.city)
+        
+    def start_current_activity(self,rcv_current_activity):
+        
+            if rcv_current_activity=="eat":
+                self.eat()
+            elif rcv_current_activity=="sleep":
+                self.sleep()
+            elif rcv_current_activity=="play":
+                self.play()
+            elif rcv_current_activity=="work":
+                self.work()
+            else: 
+             raise Exception ("Error:  HUMAN CAN'T DO THIS")
+             
+               
+        
+          
+def main():
+    
+    Human1=Human("H1","Female","eat","Shweta",24,"Pune")
+    
+    Human1.display_details()
+            
+    Human1.start_current_activity("eat")
+    Human1.start_current_activity("dance")
+             
+main()

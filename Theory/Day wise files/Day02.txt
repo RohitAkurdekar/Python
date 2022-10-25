@@ -1,0 +1,294 @@
+https://docs.python.org/3/library/stdtypes.html#string-methods
+
+---------------------------------
+Solutions to yesterday's problems
+----------------------------------
+
+"""1) Accept two numbers from the user and print 
+a) addition 
+b) first number squared 2 
+c) first number raised to number second number
+
+first_num = int(input("Please enter First number:"))
+second_num = int(input("Please enter Second number:"))
+
+print("The Addition of the numbers is ", str(first_num+ second_num))
+print("First number squared is  ", str(first_num**2))
+print("First number raised to number second number is  ", str(first_num**second_num))
+
+
+# 2) Accept String from user and output upper case of the input string
+my_string = input("Please enter a String: ")
+print("Upper case of the string is " , my_string.upper())
+
+
+3) Define a variable named "raise_salary_percentage" and get the salary raise 
+percentage from the user, Now apply the raise to an employee
+with harcoded data Name= 'gaurav' existing_salary = 900 INR and 
+print the incremented salary to the console
+
+raise_salary_percentage = int(input("Pleased enter the percentage"))
+Name= 'gaurav' 
+existing_salary = 900
+
+print("The incremented salary is " ,(existing_salary + (existing_salary*raise_salary_percentage/100) ) )
+
+4) Get the height from the user in cms and display the user height back to console
+in foot/feet and inches
+
+height = int(input("Pleased enter height in cms "))
+print("Height in feet is " , round((height/30.48),2))
+
+5) Get the no of the dollars from the user apply the conversion of 
+1 dollar = 82 rupees and print the amount to the console in rupees
+
+no_of_dollars = int(input("Pleased enter no of dollars "))
+print("Amount is INR is " , (no_of_dollars*82))
+
+6) Take the source, destination, fare in INR, discount_rate percentage from the user and display the 
+string ex: "fare from mumbai to pune is 300 INR with has a discount of 5%"
+
+"""
+source = input("Pleased enter the source ")
+destination = input("Pleased enter the destination ")
+fare = float(input("Pleased enter the fare "))
+discount_rate = float(input("Pleased enter the discount_rate in percentage "))
+
+print("Fare from" , source ," to " , destination , " is " , fare- (fare*discount_rate/100)  , " INR with has a discount of " , discount_rate, "%")
+
+---------
+Exercise
+---------
+1) Take the particulars of the student as follows from the user
+  name , age , rollno, date_of_birth, favourite_subject, marks in the favourite subject
+  and total marks secured in that semester 
+  and display the following
+  (i) Name in Sentence case , Camel case , Lower case , Upper case 
+  (ii) Year in which he/ she was born
+  (iii)Day of the Year in which he/she was born 
+  (iv) Percentage of marks of his total marks for his favourite subject in that semester 
+  (v) Welcome him/her with a following message 
+      "Welcome Mr/Ms <name>  to the world of programming , It will fun to be here
+       You could use your favourite subject <subject_name> to your advantage here"
+-----------
+starting off the solution 
+-----------	   
+	   
+"""
+1) Take the particulars of the student as follows from the user
+  name , age , rollno, date_of_birth, favourite_subject, marks in the favourite subject
+  and total marks secured in that semester 
+  and display the following
+  (i) Name in Sentence case , Camel case , Lower case , Upper case 
+  (ii) Year in which he/ she was born
+  (iii)Day of the Year in which he/she was born 
+  (iv) Percentage of marks of his total marks for his favourite subject in that semester 
+  (v) Welcome him/her with a following message 
+      "Welcome Mr/Ms <name>  to the world of programming , It will fun to be here
+       You could use your favourite subject <subject_name> to your advantage here"
+
+name , age , rollno, date_of_birth, favourite_subject, marks in the favourite subject
+  and total marks secured in that semester 
+  """
+
+name = input("Please enter Name")
+age = int(input("Please enter Age"))
+rollno = int(input("Please enter Rollno"))
+str_dob = input("Please enter date of birth in dd/mm/yyyy")
+fav_sub = input("Please enter your favourite subject ")
+marks_fav_sub = int(input("Please enter marks in that favourite subject"))
+total_marks = int(input("Please enter Total marks in the semester"))
+
+print("Your name is " , name )
+print("Your age is " , age )
+print("Your rollno is " , rollno )
+print("Your date in string format is  " , str_dob )
+print("Your favorite subject is " , fav_sub )
+print("Your marks in favourite subject is " , marks_fav_sub )
+print("Your total_marks are " , total_marks )
+
+
+--------------------------------
+""" Final Solution """
+------------------------------
+"""
+1) Take the particulars of the student as follows from the user
+  name , age , rollno, date_of_birth, favourite_subject, marks in the favourite subject
+  and total marks secured in that semester 
+  and display the following
+  (i) Name in Sentence case , Camel case , Lower case , Upper case 
+  (ii) Year in which he/ she was born
+  (iii)Day of the Year in which he/she was born 
+  (iv) Percentage of marks of his total marks for his favourite subject in that semester 
+  (v) Welcome him/her with a following message 
+      "Welcome Mr/Ms <name>  to the world of programming , It will fun to be here
+       You could use your favourite subject <subject_name> to your advantage here"
+
+name , age , rollno, date_of_birth, favourite_subject, marks in the favourite subject
+  and total marks secured in that semester 
+  """
+from re import sub
+def camel_case(s):
+  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+  return ''.join([s[0].lower(), s[1:]])
+
+name = input("Please enter Name   ")
+age = int(input("Please enter Age"))
+rollno = int(input("Please enter Rollno"))
+str_dob = input("Please enter date of birth in dd/mm/yyyy")
+
+
+fav_sub = input("Please enter your favourite subject ")
+marks_fav_sub = int(input("Please enter marks in that favourite subject"))
+total_marks = int(input("Please enter Total marks in the semester"))
+
+
+print(type(name))
+print("Your original name is   ", name)
+print("Your name Sentence case is  ", name.capitalize())
+print("Your name is Camel case is   ", camel_case(name))
+print("Your name is Upper case is ", name.upper())
+
+from datetime import datetime
+import calendar ;
+
+print("Your age is " , age )
+print("Your rollno is " , rollno )
+print("Your date in string format is  " , str_dob )
+
+dt_dob= datetime.strptime(str_dob, '%d/%m/%Y')
+print("Year is " , dt_dob.year)
+print( "The day is " , calendar.day_name[dt_dob.isoweekday()-1])
+
+
+
+print("Your favorite subject is " , fav_sub )
+print("Your marks in favourite subject is " , marks_fav_sub )
+print("Your total_marks are " , total_marks )
+
+print ( "Percentage of marks of his total marks for his favourite subject in that semester is ",(marks_fav_sub/total_marks*100))
+
+
+print(
+"Welcome Mr/Ms " , name,"  to the world of programming , It will fun to be here \n You could use your favourite subject " ,  fav_sub, "to your advantage here"
+)
+
+-----------------------
+Loops and Conditionals 
+----------------------
+# Solve the following using either while/do while loops
+1) Take a number from the user and print sum from 1 to that number 
+2) Take a number from the user and print all prime numbers from 1 to that number 
+3) Take a number from the user and print all Odd numbers from 1 to that number 
+4) Take a number from the user and print all Even numbers from 1 to that number 
+5) Take a number from the user and print fibonacci sequence till that number
+	eg : fibonnaci sequence for 5 is 1,2,3,5
+
+
+
+Solutions
+-------------
+
+"""
+# Solve the following using either while/do while loops
+1) Take a number from the user and print sum from 1 to that number 
+2) Take a number from the user and print all prime numbers from 1 to that number 
+3) Take a number from the user and print all Odd numbers from 1 to that number 
+4) Take a number from the user and print all Even numbers from 1 to that number 
+5) Take a number from the user and print fibonacci sequence till that number
+	eg : fibonnaci sequence for 5 is 1,2,3,5
+
+
+
+sum_upto_number = int(input("Please enter a number to sum upto"))
+
+cnt = 1 
+my_sum= 0  
+while(cnt <=sum_upto_number ):
+    my_sum = my_sum+cnt
+    cnt+=1
+print("The sum upto" ,sum_upto_number, "is",my_sum);
+
+
+sum_upto_number 5
+cnt 1
+sum 0 
+----
+sum = 1 
+cnt = 2
+----
+sum = 3
+cnt = 3
+------ 
+sum = 6 
+cnt = 4
+--
+sum = 10 
+cnt = 5
+-- 
+sum = 15
+cnt = 6 
+
+2) Take a number from the user and print all prime numbers from 1 to that number 
+
+number_from_user = int(input("Please enter a number "))
+
+current_number_being_checked = 2
+while(current_number_being_checked<= number_from_user):
+    divisor = 2
+    is_the_curent_number_prime = "Yes"
+    while(divisor<= current_number_being_checked//2):
+        if current_number_being_checked%divisor == 0 :
+            is_the_curent_number_prime = "No"
+            break
+        divisor+=1
+    if is_the_curent_number_prime == "Yes":
+        print(f"{current_number_being_checked} is prime")
+    current_number_being_checked+=1
+
+3) Take a number from the user and print all Odd numbers from 1 to that number 
+
+number_from_user = int(input("Please enter a number "))
+
+current_number_being_checked = 1
+while(current_number_being_checked<= number_from_user):
+    if current_number_being_checked%2 !=0:
+        print(current_number_being_checked,end=" ")
+    current_number_being_checked+=1
+
+
+
+3) Take a number from the user and print all Even numbers from 1 to that number 
+
+number_from_user = int(input("Please enter a number "))
+
+current_number_being_checked = 1
+while(current_number_being_checked<= number_from_user):
+    if current_number_being_checked%2 ==0:
+        print(current_number_being_checked,end=" ")
+    current_number_being_checked+=1
+
+    5) Take a number from the user and print fibonacci sequence till that number
+	eg : fibonnaci sequence for 5 is 1,2,3,5 """
+
+
+
+
+
+
+
+
+
+
+
+	   
+	   
+  
+
+  
+  
+
+
+
+
+
